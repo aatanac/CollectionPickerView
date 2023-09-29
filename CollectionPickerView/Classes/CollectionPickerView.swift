@@ -327,21 +327,6 @@ extension CollectionPickerView: UICollectionViewDelegate {
     }
 }
 
-// MARK: - Layout
-extension CollectionPickerView {
-    override public func layoutSubviews() {
-        super.layoutSubviews()
-        
-        reloadData()
-        
-        collectionView.frame = collectionView.superview!.bounds
-        collectionView.layer.mask?.frame = collectionView.bounds
-        if collectionView.numberOfItems(inSection: 0) > 0 {
-            selectItem(at: selectedIndex)
-        }
-    }
-}
-
 // MARK: - UIScrollViewDelegate
 extension CollectionPickerView : UIScrollViewDelegate {
     
